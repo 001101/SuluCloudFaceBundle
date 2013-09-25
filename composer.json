@@ -23,7 +23,7 @@
     },
 
     "autoload": {
-        "psr-0": { "Sulu\\Bundle\\CloudfaceBundle": "" }
+        "psr-0": { "Sulu\\Bundle\\CloudFaceBundle": "" }
     },
 
     "target-dir": "Sulu/Bundle/CloudFaceBundle"

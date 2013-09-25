@@ -1,0 +1,30 @@
+{
+    "name": "sulu/cloudface-bundle",
+    "type": "sulu-bundle",
+    "description": "Cloudface Bundle for the Sulu CMS",
+    "keywords": ["imagine", "image"],
+    "license": "MIT",
+    "keywords": ["sulu", "cloudface"],
+    "author": [
+        {
+            "name": "Naser Najari",
+            "email": "n.najari@students.fhv.at"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.2",
+        "massiveart/cloud-face": "dev-master"
+    },
+
+    "require-dev": {
+        "symfony/symfony": "2.3.*",
+        "phpunit/phpunit": "3.7.*"
+    },
+
+    "autoload": {
+        "psr-0": { "Sulu\\Bundle\\CloudfaceBundle": "" }
+    },
+
+    "target-dir": "Sulu/Bundle/CloudFaceBundle"
+}

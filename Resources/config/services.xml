@@ -1,20 +1,30 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
+
     <parameters>
-        <parameter key="sulu_cloud_face.example.class">Sulu\Bundle\CloudFaceBundle\Example</parameter>
+        <!-- General -->
+        <parameter key="sulu_cloud_face.class">MassiveArt\CloudFace\CloudFace</parameter>
+        <parameter key="sulu_cloud_face.cloudprovider.class">Massiveart\CloudFace\Provider\CloudProvider</parameter>
+
+        <!-- Dropbox -->
+        <parameter key="sulu_cloud_face.dropbox.class">Massiveart\CloudFace\Provider\Dropbox</parameter>
+
+        <!-- AmazonS3 -->
+        <parameter key="sulu_cloud_face.amazons3.class">Massiveart\CloudFace\Provider\AmazonS3</parameter>
+
+        <!-- GoogleDrive -->
+        <parameter key="sulu_cloud_face.googledrive.class">Massiveart\CloudFace\Provider\GoogleDrive</parameter>
     </parameters>
 
     <services>
-        <service id="sulu_cloud_face.example" class="%sulu_cloud_face.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <!-- CloudFace service with a cloud provider argument -->
+        <service id="my_cloud_face" class="%sulu_cloud_face.class%">
+            <argument>%sulu_cloud_face.cloudprovider.class%</argument>
         </service>
     </services>
-    -->
+
 </container>

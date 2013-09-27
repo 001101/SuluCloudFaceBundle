@@ -12,6 +12,8 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+
+
     /**
      * {@inheritDoc}
      */
@@ -19,6 +21,14 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('sulu_cloud_face');
+
+        $rootNode->children()->scalarNode('response_type')->defaultValue('code')->end()->scalarNode(
+                'client_id'
+            )->defaultvalue('App Key') // App Key from App Console
+            ->end()->scalarNode('grant_type')->defaultValue('authorization_code')->end()->scalarNode(
+                'code'
+            )->defaultvalue('') // Authorization code obtained from previous step
+            ->end();
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
